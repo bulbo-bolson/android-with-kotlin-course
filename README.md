@@ -10,7 +10,7 @@
 
 
 ## Unidades de medida en diseño
-
+[Conceptos explicados](https://material.io/design/layout/pixel-density.html#density-independence)
 - SP Scalable Pixels
 - DP Density independent pixels
 
