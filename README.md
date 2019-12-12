@@ -19,3 +19,9 @@
 ## Componentes básicos en android
 
 https://developer.android.com/guide/components/fundamentals
+
+
+
+## Guía de crear una app
+
+https://developer.android.com/training/basics/firstapp

@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         val bornYearValue: Int = bornYearField.text.toString().toInt()
         val calculatedAge = calcAge(bornYearValue)
-        setContentView(displayAgeField)
+        displayAgeField.setText(calculatedAge)
     }
 
     fun calcAge(bornYear: Int): Int {
