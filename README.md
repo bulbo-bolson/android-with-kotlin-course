@@ -14,3 +14,8 @@
 - SP Scalable Pixels
 - DP Density independent pixels
 
+
+
+## Componentes básicos en android
+
+https://developer.android.com/guide/components/fundamentals
