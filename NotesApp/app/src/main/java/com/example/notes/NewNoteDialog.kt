@@ -31,9 +31,10 @@ class NewNoteDialog: DialogFragment() {
         okButton.setOnClickListener{
             val newNote = Note()
             newNote.title = titleEdit.text.toString()
+            newNote.description = descriptionEdit.text.toString()
             newNote.idea = ideaCheckBox.isChecked
-            newNote.task = ideaCheckBox.isChecked
-            newNote.important = ideaCheckBox.isChecked
+            newNote.task = taskCheckBox.isChecked
+            newNote.important = importantCheckBox.isChecked
 
             // obtener la referencia a MainActivity
             val callingActivity = activity as MainActivity?

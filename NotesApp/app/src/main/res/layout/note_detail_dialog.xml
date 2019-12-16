@@ -12,37 +12,37 @@
             android:id="@+id/noteDetailTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="@string/note_detail_title"
             android:textSize="24sp" />
 
         <TextView
             android:id="@+id/noteDetailDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/note_detail_description" />
 
         <TextView
             android:id="@+id/noteDetailTask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/note_detail_task" />
 
         <TextView
             android:id="@+id/noteDetailImportant"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/note_detail_important" />
 
         <TextView
             android:id="@+id/noteDetailIdea"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="@string/note_detail_idea" />
 
         <Button
             android:id="@+id/noteDetailOk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/note_detail_ok" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

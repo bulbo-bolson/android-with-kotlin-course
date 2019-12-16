@@ -1,3 +1,16 @@
+## Muy importante para no frustrarse
+
+**Acelerar el rendimiento del emulador**: https://jolicode.com/blog/speed-up-your-android-emulator
+
+Vamos a:
+
+- Open AVD manager
+  - Seleccionamos un device
+    - Edit this AVD
+      - Emulated Performance
+        - Graphics
+          - Marcamos **Hardware**
+
 
 
 ## Layouts
@@ -20,8 +33,11 @@
 
 https://developer.android.com/guide/components/fundamentals
 
-
+https://kotlinlang.org/docs/reference/null-safety.html
 
 ## Guía de crear una app
 
 https://developer.android.com/training/basics/firstapp
+
+
+

@@ -2,7 +2,6 @@ package com.example.notes
 
 import android.os.Bundle
 import android.util.Log
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
@@ -12,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var nota: Note = Note()
+    private var note: Note = Note()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,19 +44,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun showNote(note: Note) {
-        val dialog = NoteDetailDialog()
-        dialog.setNote(note)
-    }
-
     fun addNote(note: Note) {
         Log.i("debugging note", note.toString())
-        this.nota = note
+        this.note = note
 
     }
-    fun verNota(view : View){
+    fun showNote(view : View) {
+        Log.i("debugging note", note.toString())
         val dialog = NoteDetailDialog()
-        dialog.setNote(nota)
+        dialog.setNote(note)
         dialog.show(supportFragmentManager, "ver nota")
     }
 
