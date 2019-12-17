@@ -7,8 +7,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$USER_HOME$/Insync/cuentadelcurro3@gmail.com/Google Drive/src/git/android-with-kotlin-course/NotesApp" />
-            <option value="$USER_HOME$/Insync/cuentadelcurro3@gmail.com/Google Drive/src/git/android-with-kotlin-course/NotesApp/app" />
+            <option value="$USER_HOME$/Insync/cuentadelcurro3@gmail.com/Google Drive/src/android-with-kotlin-course/NotesApp" />
+            <option value="$USER_HOME$/Insync/cuentadelcurro3@gmail.com/Google Drive/src/android-with-kotlin-course/NotesApp/app" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
