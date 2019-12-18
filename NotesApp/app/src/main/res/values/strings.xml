@@ -11,6 +11,13 @@
     <string name="ok_button">OK</string>
     <string name="cancel_button">Cancel</string>
 
+    <string name="note_detail_title">Title</string>
+    <string name="note_detail_description">Description</string>
+    <string name="note_detail_idea">Idea</string>
+    <string name="note_detail_task">Task</string>
+    <string name="note_detail_important">Important</string>
+    <string name="note_detail_ok">OK</string>
+
     <string name="settings_title">Settings</string>
     <string name="theme_title">Theme</string>
     <string name="theme_light">Light</string>

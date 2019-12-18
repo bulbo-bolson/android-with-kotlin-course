@@ -41,3 +41,19 @@ https://developer.android.com/training/basics/firstapp
 
 
 
+## ORM for sqlite
+
+- https://developer.android.com/training/data-storage/room/index.html
+
+- https://developer.android.com/training/data-storage/room/defining-data
+
+  ```kotlin
+  @Entity
+  data class User(
+      @PrimaryKey var id: Int,
+      var firstName: String?,
+      var lastName: String?
+  )
+  ```
+
+  

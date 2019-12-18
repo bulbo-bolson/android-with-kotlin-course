@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private var mostrarSeparador: Boolean = false
+    private var dbManager: DataBaseManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +44,9 @@ class MainActivity : AppCompatActivity() {
             dialog.show(supportFragmentManager, "")
         }
 
+        // leer datos de la bd
+        this.dbManager = DataBaseManager(this)
+        this.listaNotas = dbManager!!.getAllNotas()
 
 
         //CONFIGURAR ReclyclerView
@@ -65,13 +69,15 @@ class MainActivity : AppCompatActivity() {
         Log.i("nota","Nueva nota ${n.titulo}")
         // Temporary code
         notaTemporal = n
-            listaNotas.add(n)
-            adapter!!.notifyDataSetChanged()
+
+        listaNotas.add(n)
+
+        dbManager!!.insert(n)
+        adapter!!.notifyDataSetChanged()
     }
 
     fun mostrarNota(notaAMostar: Int) {
         val dialog = DialogDetalleNota()
-       // dialog.enviarNotaAMostar(this.notaTemporal);
         dialog.enviarNotaAMostar(listaNotas[notaAMostar])
         dialog.show(supportFragmentManager, "")
     }
