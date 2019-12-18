@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity() {
            // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
            //     .setAction("Action", null).show()
             val dialog =  DialogNuevaNota()// DialogDetalleNota()//
+            animar()
             dialog.show(supportFragmentManager, "")
         }
 
@@ -121,6 +124,13 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
 
         }
+    }
+
+    fun animar() {
+        var animacionZoom: Animation = AnimationUtils.loadAnimation(this, R.anim.flash2)
+        animacionZoom.duration = 3000
+        Log.i("animacion", "flash ${animacionZoom.repeatMode}")
+        fab.startAnimation(animacionZoom)
     }
 
     override fun onPause() {

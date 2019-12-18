@@ -83,9 +83,8 @@ class DialogNuevaNota : DialogFragment() {
             dismiss()
         }
 
-        builder.setView(dialogView).setMessage("Añadir una nueva nota")
-
-
+        val texto = resources.getString(R.string.ver_detalle_nota)
+        builder.setView(dialogView).setMessage(texto)
 
        return builder.create()
     }
