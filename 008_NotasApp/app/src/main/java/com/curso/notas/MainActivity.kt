@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.gamecodeschool.motetoselfpart3.JSONSerializer
 
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     private var mostrarSeparador: Boolean = false
     private var dbManager: DataBaseManager? = null
+    private var serializer: JSONSerializer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,8 +46,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         // leer datos de la bd
-        this.dbManager = DataBaseManager(this)
-        this.listaNotas = dbManager!!.getAllNotas()
+        // this.dbManager = DataBaseManager(this)
+        // this.listaNotas = dbManager!!.getAllNotas()
+        serializer = JSONSerializer("notas.json", applicationContext)
+
+        try {
+            listaNotas = serializer!!.load()
+        } catch (e: Exception) {
+            listaNotas = ArrayList()
+            Log.e("notas", "Error al cargar las notas de notas.json")
+            e.printStackTrace()
+        }
 
 
         //CONFIGURAR ReclyclerView
@@ -69,11 +79,15 @@ class MainActivity : AppCompatActivity() {
         Log.i("nota","Nueva nota ${n.titulo}")
         // Temporary code
         notaTemporal = n
+            listaNotas.add(n)
+            adapter!!.notifyDataSetChanged()
 
         listaNotas.add(n)
 
-        dbManager!!.insert(n)
+        // insertar en BBDD
+        // dbManager!!.insert(n)
         adapter!!.notifyDataSetChanged()
+
     }
 
     fun mostrarNota(notaAMostar: Int) {
@@ -83,6 +97,14 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    private fun grabarNotas() {
+        try {
+            this.serializer!!.save(listaNotas)
+        } catch (e: Exception) {
+            Log.e("notas", "error al grabar las notas")
+            e.printStackTrace()
+        }
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -99,5 +121,10 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
 
         }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        grabarNotas()
     }
 }

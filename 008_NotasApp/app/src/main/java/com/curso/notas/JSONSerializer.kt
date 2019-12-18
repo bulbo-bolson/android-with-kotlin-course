@@ -1,9 +1,7 @@
-package com.gamecodeschool.motetoselfpart3
-
+package com.curso.notas
 
 import android.content.Context
 import android.util.Log
-import com.curso.notas.Nota
 
 import org.json.JSONArray
 import org.json.JSONException
@@ -39,6 +37,7 @@ class JSONSerializer(
                     Context.MODE_PRIVATE)
 
             writer = OutputStreamWriter(out)
+            Log.i("JSONSerializer", jArray.toString())
             writer.write(jArray.toString())
         } finally {
             if (writer != null) {

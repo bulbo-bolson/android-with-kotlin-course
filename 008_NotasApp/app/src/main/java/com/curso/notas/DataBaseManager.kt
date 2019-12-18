@@ -65,7 +65,7 @@ class DataBaseManager(context: Context) {
         val query = "select * from NOTAS WHERE titulo=?"
         val selectionArgs = arrayOf(titulo)
         val cursor = db.rawQuery(query, selectionArgs)
-        if (c.count == 0) {
+        if (cursor.count == 0) {
             throw Exception("No encontrada nota $titulo")
         } else {
             val nota = Nota()

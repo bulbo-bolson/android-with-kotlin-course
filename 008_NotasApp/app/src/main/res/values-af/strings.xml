@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Notija</string>
+    <string name="action_add">assa</string>
+    <string name="action_settings">swcs</string>
+    <string name="attachment_summary_off">onlus</string>
+    <string name="attachment_summary_on">authao</string>
+    <string name="attachment_title">down</string>
+    <string name="cancel_button">cacnk</string>
+    <string name="description_hint">desk</string>
+    <string name="hello_world">he</string>
+    <string name="idea_text">idi</string>
+    <string name="important_text">impiot</string>
+    <string name="messages_header">mes</string>
+    <string name="ok_button">ook</string>
+    <string name="todo_text">ttaa</string>
+    <string name="sync_title">synnck</string>
+    <string name="theme_dark">ddar</string>
+    <string name="theme_light">lig</string>
+    <string name="theme_title">them</string>
+    <string name="title_activity_settings">set</string>
+    <string name="title_hint">titil</string>
+    <string name="reply_title">ede</string>
+    <string name="settings_title">sett</string>
+    <string name="signature_title">ordi</string>
+    <string name="sync_header">sinca</string>
+</resources>
