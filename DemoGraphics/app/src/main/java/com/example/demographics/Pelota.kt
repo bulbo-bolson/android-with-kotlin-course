@@ -16,17 +16,16 @@ class Pelota(var x: Float, var y: Float) {
     public fun dibujar(canvas: Canvas) {
         // dibujar la pelota en la coordenada x, y en blanco
         // paint.color = Color.WHITE
-        canvas.drawCircle(x, y, 15f, paint)
 
         // cambiar coordenadas
-        var incX = -15f
+        var incX = 10f
         x += 10
-        if (x >= 200) {
-            incX = -incX
+        if (x >= 2000) {
+            x = -incX
         }
         x = x + incX
         // volver a pintar en las nuevas coordenadas con el color del paint
         paint.color = Color.argb(255, 25, 255, 255)
-        canvas.drawCircle(x, y, 15f, paint)
+        canvas.drawCircle(x, y, 25f, paint)
     }
 }
