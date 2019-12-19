@@ -4,11 +4,14 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.util.Log
+import android.view.MotionEvent
 import android.view.SurfaceView
 
 class LiveDrawingView (context: Context) : SurfaceView(context), Runnable {
 
     private lateinit var canvas: Canvas
+    private var xIni: Float = 100f
+    private var yIni: Float = 50f
 
     fun moverPelota() {
         val pelota = Pelota(100f, 20f)
@@ -52,6 +55,18 @@ class LiveDrawingView (context: Context) : SurfaceView(context), Runnable {
         } catch (e: InterruptedException) {
             Log.i("Error", "joining thread")
         }
+    }
+
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        Log.i("touch", "action ${event!!.action}")
+        Log.i("touch", "action ${event!!.x}")
+        Log.i("touch", "action ${event!!.y}")
+        this.xIni = event.x
+        this.yIni = event.y
+        var hilo : Thread = Thread(this)
+        hilo.start()
+
+        return true
     }
 
 }
