@@ -10,9 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service
+            android:name=".ContadoresIntentService"
+            android:exported="false"></service>
+        <service
+            android:name=".MusicaService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
             android:name=".ContadorService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <activity android:name=".MainActivity">
             <intent-filter>
