@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.util.Log
+import android.view.DragEvent
 import android.view.MotionEvent
 import android.view.SurfaceView
 
@@ -55,6 +56,30 @@ class LiveDrawingView (context: Context) : SurfaceView(context), Runnable {
         } catch (e: InterruptedException) {
             Log.i("Error", "joining thread")
         }
+    }
+
+    override fun onDragEvent(event: DragEvent?): Boolean {
+        val tag = "Drag and drop"
+        event.let {
+            when (event!!.action) {
+                DragEvent.ACTION_DRAG_STARTED -> {
+                    Log.d(tag, "ACTION_DRAG_STARTED")
+                }
+                DragEvent.ACTION_DRAG_ENDED -> {
+                    Log.d(tag, "ACTION_DRAG_ENDED")
+                }
+                DragEvent.ACTION_DRAG_ENTERED -> {
+                    Log.d(tag, "ACTION_DRAG_ENTERED")
+                }
+                DragEvent.ACTION_DRAG_EXITED -> {
+                    Log.d(tag, "ACTION_DRAG_EXITED")
+                }
+                else -> {
+                    Log.d(tag, "ACTION DRAG ELSE")
+                }
+            }
+        }
+        return true
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
